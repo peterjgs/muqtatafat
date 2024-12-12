@@ -2,26 +2,58 @@
 title: "A personal web of information"
 author: ""
 date: "`r Sys.Date()`"
+lang: en
+otherlangs: [ar]
+fontfamilies:
+  - name: \arabicfont
+    font: Vazirmatn-Light
+    options: Script=Arabic,Scale=1.0
+  - name: \tradarab
+    font: Amiri
+    options: Script=Arabic,Scale=1.0
+  - name: \tradarabsmall
+    font: Amiri
+    options: Script=Arabic,Scale=0.75
 site: bookdown::bookdown_site
 documentclass: book
 output:
-  bookdown::gitbook: default
+  bookdown::pdf_book
+    #latex_engine: xelatex 
+header-includes:
+  - \usepackage{babel}
+  - \usepackage[LFE,LAE,T1]{fontenc}
+#  - \usepackage{fontspec}
 ---
+
+```{r echo = F, eval = F}
+
+require(lualatex)
+
+```
+
+
 
 
 # A personal web of information
 
 <br>
 
-<div dir = "rtl"><h1 style="text-align: center; color: #008000;">
+
+```{r, eval=knitr::is_html_output(), echo=FALSE}
+knitr::asis_output('
+[بسم الله الرحمن الرحيم]{lang="ar" dir="rtl" style="font-family: AmiriWeb;"}
+')
+```
+
+
+
+$$
+\begin{otherlanguage}{arabic}
 مُقْتَطَفات مَعلومات
-</h1>
-</div>
+\end{otherlanguage}
+$$
 
-<h2 style="text-align: center; color: #b22222;">*A selection of information*</h2>
-
-<br>
-
+*A selection of information*
 
 
 ## Arab caliphs and the Shi'a split
